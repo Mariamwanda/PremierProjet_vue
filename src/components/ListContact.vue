@@ -36,6 +36,9 @@ export default {
 </script>
 
 <style scoped>
+h1{
+  color:  #3b4d61;
+}
 input {
   margin: 10px 0;
   padding: 10px;

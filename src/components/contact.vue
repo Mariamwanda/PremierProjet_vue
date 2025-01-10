@@ -13,7 +13,7 @@ export default {
 </script>
 <style>
 .modif {
-  background-color: blue;
+  background-color: #007bff;
   padding:10px;
   border:none;
   border-radius:5px;

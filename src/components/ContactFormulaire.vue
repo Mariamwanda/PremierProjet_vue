@@ -9,8 +9,6 @@
 </template>
 
 <script>
-
-
 export default {
   props: ['contactToEdit'],
   
@@ -67,10 +65,10 @@ input {
   margin:10px;
 }
 button{
-background-color:#333;
+background-color:#3b4d61;
 padding:10px;
 border-radius: 5px;
 border:none;
-color:white;
+color:#f3ca20;
 }
 </style>
