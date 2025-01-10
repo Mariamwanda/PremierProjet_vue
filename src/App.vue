@@ -2,9 +2,9 @@
   <div>
     <h1>Ma ToDo</h1>
     <ul class="todo-grid">
-      <!-- Affichage des tâches -->
+     
       <li v-for="todo in todos" :key="todo.id" class="todo-item">
-        <img :src="todo.image" alt="Product image" />
+        <img :src="todo.image" alt="Todo Image" />
         <div>
           <h5>{{ todo.title }}</h5>
           <p>{{ todo.description }}</p>
@@ -13,8 +13,8 @@
       </li>
     </ul>
 
-    <!-- Indicateur de chargement -->
-    <div v-if="isLoading" class="loading">Chargement...</div>
+   
+    <div v-if="isLoading" class="loading">Patientez...</div>
 
     <!-- Message d'erreur -->
     <div v-if="error" class="error">{{ error }}</div>
@@ -34,61 +34,57 @@ export default {
     };
   },
   methods: {
-    // Méthode pour récupérer les données depuis l'API
+    // c'est ici j'ai récuperer les données
     async getTodos() {
-      this.isLoading = true; // Activer le chargement
-      this.error = null; // Réinitialiser les erreurs
+      this.isLoading = true; // pour attendre que ça charge
+      this.error = null; 
       try {
-        const response = await axios.get("https://fakestoreapi.com/products"); // Exemple d'API
+        const response = await axios.get("https://fakestoreapi.com/products"); // voici l'Api là
         this.todos = response.data.slice(0, 25).map(todo => ({
           ...todo,
-           // Ajouter une image unique pour chaque tâche
+           
         }));
       } catch (err) {
         this.error = "Une erreur est survenue lors du chargement des tâches.";
       } finally {
-        this.isLoading = false; // Désactiver le chargement
+        this.isLoading = false; 
       }
     },
   },
   mounted() {
-    this.getTodos(); // Appeler la méthode lors du montage du composant
+    this.getTodos();
   },
 };
 </script>
 
 <style>
-/* Style des erreurs */
+
 .error {
   color: red;
   margin-top: 10px;
   text-align: center;
 }
 
-/* Style de chargement */
+
 .loading {
   text-align: center;
   font-weight: bold;
   margin-top: 10px;
 }
 
-/* Grille pour les tâches */
-body {
-  background: #e8f5e9; /* Fond vert pâle */
-}
+
 h1{
   color: #333;
 }
 .todo-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Colonnes adaptatives */
-  gap: 20px; /* Espacement entre les éléments */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  gap: 20px;
   padding: 0;
   list-style-type: none;
   margin: 20px 0;
 }
 
-/* Style des éléments de la grille */
 .todo-item {
   background: #ffffff;
   border: 1px solid #007BFF;
