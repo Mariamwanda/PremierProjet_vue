@@ -3,8 +3,8 @@
   <div>
    
     <nav class="nav-bar">
-      <router-link to="/tache" class="nav-link left-link">GestionTaches</router-link>
-      <router-link to="/todo" class="nav-link right-link">todoListe</router-link>
+      <router-link to="/tache" class="nav-link left-link">GestionContacts</router-link>
+      <router-link to="/todo" class="nav-link right-link">ListeProduits</router-link>
     </nav>
 
     
